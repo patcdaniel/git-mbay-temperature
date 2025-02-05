@@ -39,8 +39,15 @@ def make_plots(data):
     ax.set_ylabel('Dissolved Oxygen (%)')
     fig.autofmt_xdate()
     plt.savefig('../results/swtemp_do.png')
-    
+
+def print_summary(data):
+    """ Print the Mean Temperature for each day """
+    daily_mean = data.resample('D').median()
+    for day, temp in daily_mean['sw_temp'].items():
+        print(f'{day.date()}: {temp:.2f}°C')
+
     
 if __name__ == '__main__':
     data = load_data()
     make_plots(data)
+    print_summary(data)
