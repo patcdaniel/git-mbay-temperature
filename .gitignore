@@ -1,4 +1,5 @@
-# Ignore files in the data directory
-data/*
 # Ignore all files that end in .csv
 *.csv
+
+# Ignore Weird python files that you don't need to see
+.DS_Store
