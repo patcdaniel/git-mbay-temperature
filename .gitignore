@@ -1,0 +1,4 @@
+# Ignore files in the data directory
+data/*
+# Ignore all files that end in .csv
+*.csv
